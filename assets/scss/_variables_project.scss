@@ -141,7 +141,7 @@ $font-serif: "FangSong", "STFangsong", "仿宋", "SimSun", "STSong", "宋体",
 }
 
 /* 隐藏列表点号 */
-.td-content li {
+.td-content ul li {
   list-style: none;
 }
 
@@ -234,4 +234,12 @@ $font-serif: "FangSong", "STFangsong", "仿宋", "SimSun", "STSong", "宋体",
 
 .feedback--title {
   margin-top: 3rem;
+}
+
+.footnotes ol li {
+  font-size: smaller;
+}
+
+.footnotes ol li p {
+  font-family: $font-kai;
 }
