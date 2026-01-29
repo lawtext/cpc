@@ -21,17 +21,10 @@
         <td>{{ add (mul (sub $paginator.PageNumber 1) $paginator.PagerSize) (add $index 1) }}</td>
         <td>🔗 <a href="{{ $page.RelPermalink }}">{{ $page.Title }}</a></td>
         <td>
-          {{ $date := "" }}
-          {{ with .Params.publication_date }}
-          {{ $t := time . }}
-          {{ $date = $t.Format "2006-01-02" }}
-          {{ else }}
-          {{ with .Params.effective_date }}
-          {{ $t := time . }}
-          {{ $date = $t.Format "2006-01-02" }}
+          {{ $rawDate := .Params.publication_date | default .Params.effective_date | default .Params.date }}
+          {{ with $rawDate }}
+            {{ . | time.Format "2006-01-02" }}
           {{ end }}
-          {{ end }}
-          {{ $date }}
         </td>
         <td>
           {{ $categories := .Params.categories }}
