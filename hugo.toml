@@ -75,6 +75,12 @@ anchor = "Smart"
 block = true
 [markup.goldmark.renderer]
 unsafe = true
+[markup.goldmark.extensions.cjk]
+eastAsianLineBreaks = true
+eastAsianLineBreaksStyle = 'simple'
+enable = true
+escapedSpace = true
+
 [markup.highlight]
 # See a complete list of available styles at https://xyproto.github.io/splash/docs/all.html
 style = "tango"
