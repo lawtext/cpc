@@ -34,8 +34,8 @@ min = "0.146.0"
 [[module.imports]]
 path = "github.com/google/docsy"
 disable = false
-[[module.imports]]
-path = "github.com/KKKZOZ/hugo-admonitions"
+# [[module.imports]]
+# path = "github.com/KKKZOZ/hugo-admonitions"
 
 # You can add your own taxonomies
 [taxonomies]

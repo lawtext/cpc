@@ -2,9 +2,11 @@
 title: 首页
 description: "规章制度在线阅读"
 # menu: {main: {weight: 1, pre: "<i class='fa-solid fa-home'></i>" }}
+params:
+  body_class: td-navbar-links-all-active
 ---
 
-{{< blocks/cover title="中国共产党党内规章库" image_anchor="top" height="full" >}}
+{{% blocks/cover title="中国共产党党内规章库" height="full td-below-navbar" %}}
 
 {{% param description %}}
 {.display-6}
@@ -27,6 +29,8 @@ description: "规章制度在线阅读"
 
 {{% blocks/section %}}
 
-{{% alert title="声明" color=warning %}} 本站数据采集自官方网站公开数据（包含失效和已修改的法规规章文本）。文本如有不一致，请以相关规定的标准文本为准。 {{% /alert %}}
+{{% alert title="声明" color="warning" %}}
+本站数据采集自官方网站公开数据、官方正式出版物。文本如有不一致，请以相关规定的标准文本为准。
+{{% /alert %}}
 
 {{% /blocks/section %}}
