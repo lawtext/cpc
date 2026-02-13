@@ -55,7 +55,6 @@ quality = 75
 anchor = "Smart"
 
 # Language configuration
-
 # [languages]
 # [languages.en]
 # languageName ="English"
@@ -69,17 +68,19 @@ anchor = "Smart"
 
 [markup]
 [markup.goldmark]
-[markup.goldmark.parser]
-[markup.goldmark.parser.attribute]
-# https://gohugo.io/render-hooks/blockquotes/#alerts
-block = true
 [markup.goldmark.renderer]
 unsafe = true
+[markup.goldmark.parser.attribute]
+block = true
+[markup.goldmark.extensions]
 [markup.goldmark.extensions.cjk]
 eastAsianLineBreaks = true
 eastAsianLineBreaksStyle = 'simple'
 enable = true
 escapedSpace = true
+[markup.goldmark.extensions.passthrough.delimiters]
+block = [ [ "\\[", "\\]" ], [ "$$", "$$" ] ]
+inline = [ [ "\\(", "\\)" ] ]
 
 [markup.highlight]
 # See a complete list of available styles at https://xyproto.github.io/splash/docs/all.html
@@ -88,13 +89,14 @@ style = "tango"
 
 # Comment out if you don't want the "print entire section" link enabled.
 [outputs]
-section = ["HTML", "RSS"] # "print",
-home = ['html', 'rss']
-page = ['html']
+home = ['HTML']
+page = ['HTML']
+section = ["HTML"]
 
 # Everything below this are Site Params
 [params]
 reading_speed = 400
+defaultSource = "网络"
 
 # privacy_policy = "https://policies.google.com/privacy"
 # Enable syntax highlighting and copy buttons on code blocks with Prism
@@ -121,9 +123,6 @@ reading_speed = 400
 # offlineSearchSummaryLength = 200
 # offlineSearchMaxResults = 25
 # [params.search.algolia]
-# indexName = "algolia_site_articles"
-# appId = "3X0X6KF7SS"
-# apiKey = "cd70b06ccd99eeeb94ebca076c1c0a98"
 
 [params.copyright]
 authors = "建站 [Hugo](https://gohugo.io/) | 主题 [Docsy](https://www.docsy.dev/)"
@@ -131,24 +130,22 @@ from_year = 2026
 
 # User interface configuration
 [params.ui]
-breadcrumb_disable = false
-navbar_logo = true
-navbar_translucent_over_cover_disable = false
-sidebar_menu_compact = true
-ul_show = 1
-sidebar_menu_foldable = true
-sidebar_cache_limit = 1000
-# sidebar_menu_truncate=1000
-sidebar_search_disable = false
+# breadcrumb_disable = false
+# footer_about_enable = false
+# navbar_logo = true
+# navbar_translucent_over_cover_disable = false
 showLightDarkModeMenu = true
-footer_about_enable = false
+sidebar_cache_limit = 1000
+sidebar_menu_compact = true
+sidebar_menu_foldable = true
 sidebar_menu_truncate=2000
+sidebar_search_disable = false
+ul_show = 1
 
-# navbar_logo = "/img/logo.png"
 [params.ui.feedback]
 enable = true
-yes = '感谢支持，如有新需求请访问 🔗<a href="https://github.com/qundao/law-book/issues/new">提交Issue</a>。'
-no = '很遗憾，如有问题请访问 🔗<a href="https://github.com/qundao/law-book/issues/new">提交Issue</a>。'
+yes = '感谢支持，如有新需求请访问 🔗<a href="https://github.com/lawtext/cpc/issues/new">提交Issue</a>。'
+no = '很遗憾，如有问题请访问 🔗<a href="https://github.com/lawtext/cpc/issues/new">提交Issue</a>。'
 
 [params.ui.readingtime]
 enable = true
@@ -162,8 +159,8 @@ taxonomyCollapse = true
 # taxonomyPageHeader = []
 
 [params.taxonomy.taxonomyCloudTitleMap]
-tags = "【标签】"
 categories = "【分类】"
+tags = "【标签】"
 years = "【年份】"
 authors = "【制定者】"
 
@@ -173,13 +170,11 @@ years = "年份"
 author = "制定者"
 authors = "制定者"
 
-# [params.links]
-# # End user relevant links. These will show up on left side of footer and in the community page if you have one.
-# # [[params.links.user]]
-# #   name = "User mailing list"
-# #   url = "https://example.org/mail"
-# #   icon = "fa fa-envelope"
-# #   desc = "Discussion and help from your fellow users"
+[[menu.main]]
+name = '法律法规'
+weight = 90
+url = 'https://lawtext.github.io/'
+pre = '<i class="fa-solid fa-link"></i>'
 
 [services]
 [services.disqus]
