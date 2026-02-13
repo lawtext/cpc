@@ -1,5 +1,8 @@
 <div class="section-table">
-    {{ $pages := (where .Pages "Type" "docs").ByDate.Reverse }}
+    <!-- {{ $pages := (where .Pages "Type" "docs").ByDate.Reverse }} -->
+    {{ $pages := where .Site.RegularPages "Section" .Section }}
+    {{ $pages = where $pages "Type" "docs" }}
+    {{ $pages = $pages.ByDate.Reverse }}
     {{ $pageSize := default 10 .Site.Params.page.pageSize }}
     {{ $paginator := .Paginate $pages $pageSize }}
 

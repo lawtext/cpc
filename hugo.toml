@@ -170,6 +170,17 @@ years = "年份"
 author = "制定者"
 authors = "制定者"
 
+[params.statusClassMap]
+"尚未生效" = "pending"
+"有效" = "active"
+"生效" = "active"
+"已修改" = "amended"
+"已修订" = "amended"
+"已废止" = "repealed"
+"废止或失效" = "repealed"
+"未知" = "unknown"
+
+
 [[menu.main]]
 name = '法律法规'
 weight = 90
