@@ -16,6 +16,16 @@ $font-sans: "PingFang SC", "SimHei", "STHeiti", "黑体", "Microsoft YaHei", "�
 $font-serif: "FangSong", "STFangsong", "仿宋", "SimSun", "STSong", "宋体",
   "Noto Serif CJK SC", "Noto Serif SC", serif;
 
+/* CSS custom properties for font selector */
+:root {
+  --font-serif-default: sans-serif;
+  --font-serif-songti: "SimSun", "STSong", "宋体", serif;
+  --font-serif-fangsong: "FangSong", "STFangsong", "仿宋", "SimSun", serif;
+  --font-serif-heiti: "PingFang SC", "SimHei", "STHeiti", "黑体", "Microsoft YaHei", sans-serif;
+  --font-serif-kaiti: "KaiTi", "STKaiti", "Kai", "楷体", serif;
+  --font-serif-active: var(--font-serif-fangsong);
+}
+
 .pagination a {
   margin: 0 5px;
   padding: 4px 8px;
@@ -168,7 +178,7 @@ $font-serif: "FangSong", "STFangsong", "仿宋", "SimSun", "STSong", "宋体",
 .td-content p,
 .td-content ul,
 .td-content table tbody {
-  font-family: $font-serif;
+  font-family: var(--font-serif-active);
 }
 
 .td-content p {

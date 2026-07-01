@@ -95,6 +95,20 @@
         {{ partial "navbar-version-selector.html" . -}}
       </li>
       {{ end -}}
+      <li class="nav-item td-navbar__font-menu">
+        <div class="dropdown">
+          <button class="nav-link dropdown-toggle" type="button" id="fontDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+            <span>字体</span>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="fontDropdown">
+            <li><a class="dropdown-item font-option" data-font="default" href="#">系统默认</a></li>
+            <li><a class="dropdown-item font-option" data-font="songti" href="#">宋体</a></li>
+            <li><a class="dropdown-item font-option" data-font="fangsong" href="#">仿宋</a></li>
+            <li><a class="dropdown-item font-option" data-font="heiti" href="#">黑体</a></li>
+            <li><a class="dropdown-item font-option" data-font="kaiti" href="#">楷体</a></li>
+          </ul>
+        </div>
+      </li>
       {{ if (gt (len .Site.Home.Translations) 0) -}}
       <li class="nav-item td-navbar__lang-menu">
         {{ partial "navbar-lang-selector.html" . -}}

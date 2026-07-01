@@ -78,6 +78,15 @@ window.markmap = {
 {{ if and .Site.Params.search (isset .Site.Params.search "algolia") -}}
   {{ template "algolia/scripts" .Site.Params.search.algolia -}}
 {{ end -}}
+{{ $fontSelector := resources.Get "js/font-selector.js" -}}
+{{ if $fontSelector -}}
+  {{ if hugo.IsProduction -}}
+    {{ $fontSelector = $fontSelector | minify | fingerprint -}}
+    <script src="{{ $fontSelector.RelPermalink }}" integrity="{{ $fontSelector.Data.Integrity }}" crossorigin="anonymous"></script>
+  {{ else -}}
+    <script src="{{ $fontSelector.RelPermalink }}"></script>
+  {{ end -}}
+{{ end -}}
 <script src='{{ "js/tabpane-persist.js" | relURL }}'></script>
 {{ partial "hooks/body-end.html" . -}}
 
