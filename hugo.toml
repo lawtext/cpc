@@ -2,7 +2,7 @@ baseURL = 'https://lawtext.github.io/cpc/'
 title = '中国共产党党章党规'
 
 # 语言设置
-languageCode = "zh-cn"
+locale = "zh-cn"
 defaultContentLanguage = "zh-cn"
 defaultContentLanguageInSubdir = false
 hasCJKLanguage = true
@@ -60,7 +60,7 @@ anchor = "Smart"
 # languageName ="English"
 # title = "Goldydocs"
 # contentDir = "content/fa"
-# languageDirection = "rtl"
+# Direction = "rtl"
 # [languages.en.params]
 # description = "A Docsy example site"
 # time_format_default = "2006.01.02"
