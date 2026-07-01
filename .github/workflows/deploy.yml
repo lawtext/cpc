@@ -46,7 +46,7 @@ jobs:
         uses: pnpm/action-setup@v6
 
       - run: pnpm install
-      - run: hugo mod get -u && hugo mod tidy
+      - run: hugo mod tidy # hugo mod get -u && 
 
       - name: Build Site
         run: |
